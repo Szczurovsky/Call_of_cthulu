@@ -32,33 +32,31 @@ if (localStorageNotesKey !== null) {
   boxName.innerHTML = item[0].name1;
 }
 
-stories = [
+const stories = [
   {
-    text: "Witam Cię podróżniku! Pora abyś się przedstawił.",
-    category: "name",
-  },
-  {
-    text: "Poznałem już Twoje imię: " + item[0].name1,
-    category: "name",
-  },
-  {
-    text: "Miło mi moje imię to Barnabasz!",
-    category: "name",
-  },
-  {
-    text: "Wybierzmy teraz twoje cechy",
-    category: "name",
-  },{
-    text: "Jak silny jesteś?",
-    category: "name",
-  },
+        text: "A więc twoje imię to : " + item[0].name1 + "!",
+        category: "name",
+      },
+      {
+        text:
+          "Miło mi, ja jestem Barnabasz. To teraz, kiedy już się znamy pora abyś pokazał mi co potrafisz!",
+        category: "name",
+      },
+      {
+        text: "Wyjdźmy na zewnątrz. Pora cię przetestować",
+        category: "story",
+      },
+      {
+        text: "Podnieś ten kamień. Dzięki temu ocenię twoją siłę!",
+        category: "stats",
+      },
 ];    
 localStorage.setItem("stories",JSON.stringify(stories))
-
+let existedIndex= localStorage.getItem("indexStorage");
 
 if (localStorage.getItem(indexStorage) !== null){
 
-existedIndex= localStorage.getItem("indexStorage");
+let existedIndex= localStorage.getItem("indexStorage");
 indexStory = JSON.parse(existedIndex);
 indexStory--
 divStory.innerHTML = stories[indexStory].text;
